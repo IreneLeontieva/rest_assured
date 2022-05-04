@@ -2,6 +2,7 @@ package qaguru;
 
 import org.junit.jupiter.api.Test;
 
+import static listeners.CustomAllureListener.withCustomTemplates;
 import static org.hamcrest.CoreMatchers.is;
 import static io.restassured.RestAssured.given;
 
@@ -10,6 +11,7 @@ public class RestApiActions {
     @Test
     void subScribe() {
         given()
+                .filter(withCustomTemplates())
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body("email=cynic1394@gmail.com")
                 .when()
@@ -24,6 +26,7 @@ public class RestApiActions {
     @Test
     void addToCardWithCookies() {
         given()
+                .filter(withCustomTemplates())
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .cookie("Nop.customer=61355710-3800-4d15-9c52-9261258a4e44;")
                 .body("product_attribute_72_5_18=53&product_attribute_72_6_19=54&product_attribute_72_3_20=57&addtocart_72.EnteredQuantity=1")
@@ -39,6 +42,7 @@ public class RestApiActions {
     @Test
     void addToWishListWithoutCookies() {
         given()
+                .filter(withCustomTemplates())
                 .contentType("application/x-www-form-urlencoded; charset=UTF-8")
                 .body("addtocart_78.EnteredQuantity=1")
                 .when()

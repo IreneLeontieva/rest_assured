@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 import static io.restassured.http.ContentType.JSON;
+import static listeners.CustomAllureListener.withCustomTemplates;
 import static org.hamcrest.Matchers.is;
 
 public class RestApi {
@@ -11,6 +12,7 @@ public class RestApi {
     @Test
     void getUserTest() {
         given()
+                .filter(withCustomTemplates())
                 .when()
                 .get("https://reqres.in/api/users/4")
                 .then()
@@ -21,6 +23,7 @@ public class RestApi {
     @Test
     void getListUsersTest() {
         given()
+                .filter(withCustomTemplates())
                 .when()
                 .get("https://reqres.in/api/users?page=2")
                 .then()
@@ -33,6 +36,7 @@ public class RestApi {
         String data = "{\"name\": \"morpheus\", \"job\": \"leader\"}";
 
         given()
+                .filter(withCustomTemplates())
                 .contentType(JSON)
                 .body(data)
                 .when()
@@ -47,6 +51,7 @@ public class RestApi {
         String dataUpdate = "{ \"name\": \"morpheus\", \"job\": \"zion resident\"}";
 
         given()
+                .filter(withCustomTemplates())
                 .contentType(JSON)
                 .body(dataUpdate)
                 .when()
@@ -60,6 +65,7 @@ public class RestApi {
     void deleteUserTest() {
 
         given()
+                .filter(withCustomTemplates())
                 .when()
                 .delete("https://reqres.in/api/users/4")
                 .then()
@@ -71,6 +77,7 @@ public class RestApi {
         String dataReg = "{\"email\": \"peter@klaven\"}";
 
         given()
+                .filter(withCustomTemplates())
                 .contentType(JSON)
                 .body(dataReg)
                 .when()
