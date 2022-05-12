@@ -48,28 +48,40 @@
 
 ## Отчеты о прохождении тестов можно смотреть в Allure report
 
-![allure report](images/reports/AllureReport001.png)
+<p align="center">
+<img title="Jenkins Dashboard" src="images/reports/AllureReport001.png">
+</p>
 
 ## Хранение тест-кейсов организовано в Allure TestOps
 
-![](images/reports/AllureTestOps001.png)
+<p align="center">
+<img title="Jenkins Dashboard" src="images/reports/AllureTestOps001.png">
+</p>
 
 Обзор тестовых запусков:
 
-![](images/reports/AllureTestOps002.png)
+<p align="center">
+<img title="Jenkins Dashboard" src="images/reports/AllureTestOps002.png">
+</p>
 
 ## Настроена интеграция с Jira
 
-![](images/reports/Jira001.png)
+<p align="center">
+<img title="Jenkins Dashboard" src="images/reports/Jira001.png">
+</p>
 
 ## Удаленный запуск тестов возможен через - Jenkins job
 
 Click <a target="_blank" href="https://jenkins.autotests.cloud/job/rest_assured_allure_IL/">here</a> to do that.
 
-![](images/reports/Jenkins001.png)
+<p align="center">
+<img title="Jenkins Dashboard" src="images/reports/Jenkins001.png">
+</p>
 
 ## Оповещение о прохождении тестов приходит в Telegram bot
 
 Each test builds sent report into telegram bot
 
-![](images/reports/TelegramReport001.png)
+<p align="center">
+<img title="Jenkins Dashboard" src="images/reports/TelegramReport001.png">
+</p>
