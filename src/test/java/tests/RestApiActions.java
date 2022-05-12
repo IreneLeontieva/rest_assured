@@ -1,5 +1,7 @@
 package tests;
 
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static listeners.CustomAllureListener.withCustomTemplates;
@@ -8,6 +10,8 @@ import static io.restassured.RestAssured.given;
 
 public class RestApiActions {
 
+    @Owner("ileonteva")
+    @DisplayName("SubScribe demowebshop")
     @Test
     void subScribe() {
         given()
@@ -23,6 +27,8 @@ public class RestApiActions {
                 .body("Result", is("Thank you for signing up! A verification email has been sent. We appreciate your interest."));
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Add to card with cookies")
     @Test
     void addToCardWithCookies() {
         given()
@@ -39,6 +45,8 @@ public class RestApiActions {
                 .body("message", is("The product has been added to your <a href=\"/cart\">shopping cart</a>"));
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Add to card without cookies")
     @Test
     void addToWishListWithoutCookies() {
         given()

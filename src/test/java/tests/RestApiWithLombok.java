@@ -1,6 +1,8 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import models.*;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
@@ -11,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RestApiWithLombok {
 
+    @Owner("ileonteva")
+    @DisplayName("Register user")
     @Test
     void registerTest() {
         RegisterAndLoginUser registerAndLoginUser = new RegisterAndLoginUser();
@@ -29,6 +33,8 @@ public class RestApiWithLombok {
         assertNotNull(registerAndLoginUserResponse.getToken());
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Get user")
     @Test
     void getUserTest() {
         given()
@@ -39,6 +45,8 @@ public class RestApiWithLombok {
                 .body("data.first_name", is("Eve"));
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Get list of users")
     @Test
     void getListUsersTest() {
         given()
@@ -49,6 +57,8 @@ public class RestApiWithLombok {
                 .body("total_pages", is(2));
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Update user")
     @Test
     void updateUserTest() {
         CreateAndUpdateUser user = new CreateAndUpdateUser();
@@ -67,6 +77,8 @@ public class RestApiWithLombok {
         assertEquals("zion resident", userResponse.getJob());
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Create user")
     @Test
     void createUserTest() {
         CreateAndUpdateUser user = new CreateAndUpdateUser();
@@ -87,6 +99,8 @@ public class RestApiWithLombok {
         assertNotNull(userResponse.getCreatedAt());
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Delete user")
     @Test
     void deleteUserTest() {
 
@@ -97,6 +111,8 @@ public class RestApiWithLombok {
                 .statusCode(204);
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Failed login user")
     @Test
     void failedLogTest() {
         RegisterAndLoginUser registerAndLoginUser = new RegisterAndLoginUser();
@@ -112,6 +128,8 @@ public class RestApiWithLombok {
         assertEquals("Missing password", registerAndLoginUserResponseFailed.getError());
     }
 
+    @Owner("ileonteva")
+    @DisplayName("Failed register user")
     @Test
     void failedRegisterTest() {
         RegisterAndLoginUser registerAndLoginUser = new RegisterAndLoginUser();
